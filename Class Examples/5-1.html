@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+    <title>Calculator</title>
+    <meta charset = "utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+        function add(){
+            let num1 = document.getElementById("input1").value;
+            let num2 = document.getElementById("input2").value;
+            var sum = parseFloat(num1) + parseFloat(num2);
+            document.getElementById("result").innerHTML = sum.toFixed(2);
+        }
+        function sub(){
+            let num1 = document.getElementById("input1").value;
+            let num2 = document.getElementById("input2").value;
+            var difference = parseFloat(num1) - parseFloat(num2);
+            document.getElementById("result").innerHTML = difference.toFixed(2);
+        }
+        function divide(){
+            let num1 = document.getElementById("input1").value;
+            let num2 = document.getElementById("input2").value;
+            if(num2 == "0"){
+                document.getElementById("result").innerHTML = "<font color='red'>Error! Cannot divide by 0</font>";
+            }else{
+                var divided = parseFloat(num1) / parseFloat(num2);
+                document.getElementById("result").innerHTML = divided.toFixed(2);
+            }
+        }
+        function multiply(){
+            let num1 = document.getElementById("input1").value;
+            let num2 = document.getElementById("input2").value;
+            var multiple = parseFloat(num1) * parseFloat(num2);
+            document.getElementById("result").innerHTML = multiple.toFixed(2);
+        }
+    </script>
+
+    <style>
+        input[type="number"]{
+            width: 75px;
+        }
+        button{
+            width: 25px;
+            height: 25px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>
+            <input type="number" id="input1"></input>
+            <input type="number" id="input2"></input>
+        </div>
+        <br>
+        <button id="plusButton" onclick="add();">+</button> 
+        <button id="minusButton" onclick="sub();">-</button>
+        <button id="divideButton" onclick="divide();">/</button> 
+        <button id="multiplyButton" onclick="multiply();">x</button>
+        &emsp;<div style="font-size: 125%;">Result: <span id="result"></span></div>
+    </div>
+</body>
+</html>
