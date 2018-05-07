@@ -10,22 +10,49 @@
 
     <style>
         img{
-            padding: 10px;
+            max-width: 100%;
+            height: auto;
+        }
+        input[type="text"]{
+            font-size: 80%;
+        }
+        header {
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        h1 {
+            font-family: 'Roboto Slab';
+            color: black;
+            font-size: 40px;
+            margin: 0px;
+            padding-bottom: 5px;
+            padding-left: 10px;
+        }
+        .flex-container {
+            display: -webkit-flex;
+            display: flex;
+            flex-wrap: wrap;
+            height: 100%;
+        }
+        #logo{
+            width: 30%;
+            height: 30%;
+            align: left;
         }
     </style>
 </head>
 
 <body>
-    <header style="font-size: 250%; background-color: cornflowerblue">
-        <table>
-            <tr>
-                <td style="text-align: right;"><img src="bookIcon.JPG" style="width: 40%; height: 40%;"></td>
-                <td><b>Story Tellers</b></td>
-                </tr>
-        </table>
+    <header style="background-color: cornflowerblue" class="flex-container">
+            <img src="bookIcon.JPG" id="logo">
+            <h1><b>Story Tellers</b></h1>
     </header>
     <div>
-        
+        <section id="titleAndAuthor">
+            <h1>Title: <input type="text" id="title"></h1>
+            <h1>Name: <input type="text" id="author"></h1>
+        </section>
     </div>
 </body>
 </html>
