@@ -24,7 +24,7 @@
         h1 {
             font-family: 'Roboto Slab';
             color: black;
-            font-size: 40px;
+            font-size: 110%;
             margin: 0px;
             padding-bottom: 5px;
             padding-left: 10px;
@@ -38,21 +38,62 @@
         #logo{
             width: 30%;
             height: 30%;
-            align: left;
+        }
+        #started_stories p:hover{
+            cursor: pointer;
         }
     </style>
+    <script>
+        function saveStory(){
+            var storyName = document.getElementById("title").value;
+            var author = document.getElementById("author").value;
+            var storyHTML = document.getElementById("story").value;
+            var storyAuthor = storyName + " " + author;
+            localStorage.setItem(storyAuthor, storyHTML);
+        }
+        function loadStory(){
+            var storyName = document.getElementById("title").value;
+            var author = document.getElementById("author").value;
+            var storyAuthor = storyName + " " + author;
+            var storyHTML = localStorage.getItem(storyAuthor);
+            document.getElementById("story").value = storyHTML;
+        }
+    </script>
 </head>
 
 <body>
     <header style="background-color: cornflowerblue" class="flex-container">
             <img src="bookIcon.JPG" id="logo">
             <h1><b>Story Tellers</b></h1>
-    </header>
+    </header><br>
     <div>
-        <section id="titleAndAuthor">
-            <h1>Title: <input type="text" id="title"></h1>
-            <h1>Name: <input type="text" id="author"></h1>
-        </section>
+        <table>
+            <tr>
+                <td valign="top"><h1>Title: </h1></td>
+                <td><input type="text" id="title"></td>
+            </tr>
+            <tr>
+                <td valign="top"><h1>Name: </h1></td>
+                <td><input type="text" id="author"></td>
+            </tr>
+            <tr>
+                <td valign="top"><h1>Story: </h1></td>
+                <td>
+                    <textarea id="story" placeholder="Type your story here..." 
+                            maxlength="1000" rows="6"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button onclick="saveStory();">Save</button>
+                    <button onclick="loadStory();">Find and Edit</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="started_stories">
+
     </div>
 </body>
 </html>
