@@ -17,3 +17,28 @@ function EditRecord() {
   adoRS.Close();
   adoConn.Close();
 }
+
+function loadStory(){
+    //pg config
+var pg = require('pg');
+
+const connectionString = 'postgres://postgres:SydGrad2014@localhost:5432/StoriesDB';
+
+var client = new pg.Client(connectionString);
+
+	client.connect(function(err) {
+		if (err) {
+			console.log("Error connecting to DB: ");
+			console.log(err);
+			callback(err, null);
+    }
+    var sql = "SELECT * FROM stories";
+
+    var query = client.query(sql);
+    query.on("row", function(row,result){
+
+      result.addRow(row);
+      
+    });
+});
+}

@@ -4,6 +4,7 @@
     <title>Storyteller</title>
     <meta charset = "utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="bookIcon.JPG">
     <script>
         
     </script>
@@ -56,7 +57,12 @@
             var author = document.getElementById("author").value;
             var storyAuthor = storyName + " " + author;
             var storyHTML = localStorage.getItem(storyAuthor);
-            document.getElementById("story").value = storyHTML;
+            var w = screen.width * .5;
+            var h = screen.height * .5;
+            var myWindow = window.open("", "storyWindow", "width=" + w + ",height=" + h + ",screenX=10,screenY=150");
+            myWindow.document.write("<link rel='icon' href='bookIcon.JPG'><title>Story: " + storyName + "</title>");
+            myWindow.document.write("<p>" + storyName + " by: " + author + "</p><p>" + storyHTML + "</p>");
+            //document.getElementById("story").value = storyHTML;
         }
     </script>
 </head>
@@ -86,8 +92,8 @@
             <tr>
                 <td></td>
                 <td>
-                    <button onclick="saveStory();">Save</button>
-                    <button onclick="loadStory();">Find and Edit</button>
+                    <button on-touch="saveStory();">Save</button>
+                    <button on-touch="loadStory();">Find and Edit</button>
                 </td>
             </tr>
         </table>
