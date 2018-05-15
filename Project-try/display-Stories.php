@@ -3,31 +3,24 @@
 <body>
 <table>
 <?php
-try
-{
   $user = 'postgres';
   $password = 'SydGrad2014';
-  $db = new PDO('pgsql:host=localhost;dbname=StoriesDB', $user, $password);
-}
-catch (PDOException $ex)
-{
-  echo 'Error!: ' . $ex->getMessage();
-  die();
-}
-echo "<tr><td>Connected!</td></tr>";
+  $db = pg_connect('host=localhost port=5432 dbname=StoriesDB user='. $user . 'password=' . $password);
 
-$db->query('\c StoriesDB');
+
+echo "Connected!";
+
 
 $whole_sql = "SELECT * FROM stories";
-echo "<tr><td>SQL command was created</td></tr>";
+echo "SQL command was created";
 
-$whole_result = $db->query($whole_sql);
+$whole_result = pg_query($db, $whole_sql);
 if (!$whole_result) {
   die ('Could not run query');
 }
-echo "<tr><td>got result. Here's query: " . $whole_sql . "</td></tr>";
+echo "got result. Here's query: " . $whole_sql;
 $count = 1;
-while($whole_row = $whole_result->fetch_array(PDO::FETCH_ASSOC)){
+while($whole_row = pg_fetch_all($whole_result)){
   echo "<tr style='text-align: center;' id='" . $count . "'>";
   echo "<td>$whole_row[1]</td>";
   echo "<td>$whole_row[2]</td>";
