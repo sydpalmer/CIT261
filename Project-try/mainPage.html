@@ -47,40 +47,7 @@
         <h1><b>Story Tellers</b></h1>
     </header><br>
     <div id="stories">
-        <?php
-        $host = 'host=localhost';
-        $port = 'port=5432';
-        $dbName = 'dbname=StoriesDB';
-        $user = 'user=postgres';
-        $password = 'password=SydGrad2014';
-        $db = pg_connect("$host $port $dbName $user $password");
-      
-        if(!$db) {
-          echo "Error : Unable to open database\n";
-        } else {
-          echo "Opened database successfully\n";
-        }
-      
-        $sql = "SELECT * FROM stories";
-      
-        $result = pg_query($db, $sql);
-        if(!$result){
-          echo pg_last_error($db);
-          exit;
-        }
-      
-        $count = 1;
-        while($row = pg_fetch_all($result)){
-          echo "<tr style='text-align: center;' id='" . $count . "'>";
-          echo "<td>" . $row['title'] . "</td>";
-          echo "<td>" . $row['author'] . "</td>";
-          echo "<td>" . $row['story'] . "</td>";
-          echo "</tr>";
-          $count += 1;
-        }
-        pg_close($db);
-
-        ?> 
+        <iframe src="display-Stories.php" frameborder="0"></iframe>
     </div>
 </body>
 </html>
