@@ -34,6 +34,21 @@
     $count += 1;
   }
   pg_close($db);
+
+    // $link = pg_connect("dbname=StoriesDB user=postgres password=SydGrad2014");
+    // $res = pg_exec($link, "select * from stories");
+    // $numrows = pg_numrows($res);
+
+    // for($ri = 0; $ri < $numrows; $ri++){
+    //   echo "<tr style='text-align: center;' id='" . $ri . "'>";
+    //   $row = pg_fetch_array($res, $ri);
+    //   echo "<td>" . $row['title'] . "</td>";
+    //   echo "<td>" . $row['author'] . "</td>";
+    //   echo "<td>" . $row['story'] . "</td>";
+    //   echo "</tr>";
+    // }
+    // pg_close($link);
+
 ?> 
 </table>
 </body>
