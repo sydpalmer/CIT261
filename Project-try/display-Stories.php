@@ -26,13 +26,14 @@ if (!$whole_result) {
   die ('Could not run query');
 }
 echo "<tr><td>got result. Here's query: " . $whole_sql . "</td></tr>";
-
+$count = 1;
 while($whole_row = $whole_result->fetch_array(PDO::FETCH_ASSOC)){
-  echo "<tr style='text-align: center;'>";
+  echo "<tr style='text-align: center;' id='" . $count . "'>";
   echo "<td>$whole_row[1]</td>";
   echo "<td>$whole_row[2]</td>";
   echo "<td>$whole_row[3]</td>";
   echo "</tr>";
+  $count += 1;
 }
 echo "<tr><td>Just finished the while loop.</td></tr>";
 ?> 
