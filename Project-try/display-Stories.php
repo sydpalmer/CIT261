@@ -3,32 +3,37 @@
 <body>
 <table>
 <?php
-  $user = 'postgres';
-  $password = 'SydGrad2014';
-  $db = pg_connect('host=localhost port=5432 dbname=StoriesDB user='. $user . 'password=' . $password);
+  $host = 'host=localhost';
+  $port = 'port=5432';
+  $dbName = 'dbname=StoriesDB';
+  $user = 'user=postgres';
+  $password = 'password=SydGrad2014';
+  $db = pg_connect("$host $port $dbName $user $password");
 
+  if(!$db) {
+    echo "Error : Unable to open database\n";
+  } else {
+    echo "Opened database successfully\n";
+  }
 
-echo "Connected!";
+  $sql = "SELECT * FROM stories";
 
+  $result = pg_query($db, $sql);
+  if(!$result){
+    echo pg_last_error($db);
+    exit;
+  }
 
-$whole_sql = "SELECT * FROM stories";
-echo "SQL command was created";
-
-$whole_result = pg_query($db, $whole_sql);
-if (!$whole_result) {
-  die ('Could not run query');
-}
-echo "got result. Here's query: " . $whole_sql;
-$count = 1;
-while($whole_row = pg_fetch_all($whole_result)){
-  echo "<tr style='text-align: center;' id='" . $count . "'>";
-  echo "<td>$whole_row[1]</td>";
-  echo "<td>$whole_row[2]</td>";
-  echo "<td>$whole_row[3]</td>";
-  echo "</tr>";
-  $count += 1;
-}
-echo "<tr><td>Just finished the while loop.</td></tr>";
+  $count = 1;
+  while($row = pg_fetch_all($result)){
+    echo "<tr style='text-align: center;' id='" . $count . "'>";
+    echo "<td>" . $row[1] . "</td>";
+    echo "<td>" . $row[2] . "</td>";
+    echo "<td>" . $row[3] . "</td>";
+    echo "</tr>";
+    $count += 1;
+  }
+  pg_close($db);
 ?> 
 </table>
 </body>
