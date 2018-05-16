@@ -15,7 +15,6 @@
     $row = pg_fetch_array($res, $ri);
     echo "<td>" . $row['title'] . "</td>";
     echo "<td>" . $row['author'] . "</td>";
-    echo "<td>" . $row['story'] . "</td>";
     echo "</tr>";
   }
   pg_close($link);
