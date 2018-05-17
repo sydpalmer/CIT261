@@ -20,6 +20,7 @@
     echo "<td id='" . $count . "'>" . $row['author'] . "</td>";
     echo "</tr>";
   }
+  echo "<p id='demo'></p>";
   pg_close($link);
 
 ?> 
