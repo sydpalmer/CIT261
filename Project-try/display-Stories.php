@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <script src="display-Stories.js"></script>
+</head>
 <body>
 <table>
 <?php
@@ -11,10 +14,10 @@
   $count = 0;
   for($ri = 0; $ri < $numrows; $ri++){
     $count = $ri + 1;
-    echo "<tr style='text-align: right;' id='" . $count . "'>";
+    echo "<tr style='text-align: right;'>";
     $row = pg_fetch_array($res, $ri);
-    echo "<td>" . $row['title'] . "</td>";
-    echo "<td>" . $row['author'] . "</td>";
+    echo "<td id='" . $count . "'>" . $row['title'] . "</td>";
+    echo "<td id='" . $count . "'>" . $row['author'] . "</td>";
     echo "</tr>";
   }
   pg_close($link);
