@@ -1,4 +1,6 @@
 document.addEventListener('click', showStory);
 function showStory(){
-    alert(event.srcElement.id);
+    if(!isNaN(parseint(event.srcElement.id))){
+        
+    }
 }
