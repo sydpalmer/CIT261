@@ -5,6 +5,6 @@ function showStory(){
         var dest = "showStory.php?id=" + event.srcElement.id;
         var x = (screen.width/2) - (300/2);
         var y = (screen.height/2) - (400/2);
-        window.open(dest, "_blank", "scrollbars=yes,resizable=yes,width=300,height=400,left=" + x + ",top=" + y);
+        window.open(dest, "_blank", "scrollbars=yes,width=300,height=400,left=" + x + ",top=" + y);
     }
 }

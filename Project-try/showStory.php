@@ -13,9 +13,10 @@
   for($ri = 0; $ri < $numrows; $ri++){
     $row = pg_fetch_array($res, $ri);
     echo "<h1>" . $row['title'] . "</h1>
-            <h2>By: " . $row['author'] . "</h2><br>
+            <h2>By: " . $row['author'] . "</h2>
             <p>" . $row['story'] . "</p>";
   }
+  echo "<button id='addToStory'>Add to Story</button>";
   pg_close($link);
 
 ?>
