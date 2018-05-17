@@ -10,7 +10,7 @@
   $res = pg_exec($link, "select * from stories");
   $numrows = pg_numrows($res);
 
-  echo "<tr style='text-align: center'><th>Title</th><th>Author</th><th>Story</th></tr>";
+  echo "<tr style='text-align: center'><th>Title</th><th>Author</th></tr>";
   $count = 0;
   for($ri = 0; $ri < $numrows; $ri++){
     $count = $ri + 1;
@@ -20,7 +20,6 @@
     echo "<td id='" . $count . "'>" . $row['author'] . "</td>";
     echo "</tr>";
   }
-  echo "<p id='demo'></p>";
   pg_close($link);
 
 ?> 

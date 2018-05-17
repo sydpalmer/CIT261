@@ -1,14 +1,9 @@
 document.addEventListener('click', showStory);
 function showStory(){
     if(!isNaN(parseInt(event.srcElement.id))){
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                //document.getElementById("demo").innerHTML = this.responseText;
-            }
-        };
         var dest = "showStory.php?id=" + event.srcElement.id;
-        xhttp.open("GET", dest, true);
-        xhttp.send();
+        var x = (screen.width/2) - (300/2);
+        var y = (screen.height/2) - (400/2);
+        window.open(dest, "_blank", "scrollbars=yes,resizable=yes,width=300,height=400,left=" + x + ",top=" + y);
     }
 }
