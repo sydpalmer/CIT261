@@ -16,9 +16,15 @@
             <h2>By: " . $row['author'] . "</h2>
             <p>" . $row['story'] . "</p>";
   }
-  echo "<button id='addToStory'>Add to Story</button>";
   pg_close($link);
 
+?>
+<button type='submit' id='addToStory'>Add To Story</button>
+
+<?php
+  if(isset($_GET['addToStory'])){
+
+  }
 ?>
 </body>
 </html>
