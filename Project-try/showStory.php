@@ -18,10 +18,12 @@
     echo "<h1>" . $row['title'] . "</h1>
             <h2>By: " . $row['author'] . "</h2>
             <p>" . $row['story'] . "</p>";
+    $_SESSION['title'] = $row['title'];
+    $_SESSION['author'] = $row['author'];
   }
   pg_close($link);
 
 ?>
-<button id='addToStory'>Add To Story</button>
+<button id='addToStory'>Add to Story</button>
 </body>
 </html>
