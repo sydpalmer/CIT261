@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Story</title>
-    <script>
-      function addStory(){
-        var dest = "addTo.php?id=" + <?php $num?>;
-        var x = (screen.width/2) - (300/2)+(250/2);
-        var y = (screen.height/2) - (400/2)+(350/2);
-        window.open(dest, "_blank", "scrollbars=yes,width=250,height=350,left=" + x + ",top=" + y);
-    }
-}
-    </script>  
+    <title>Story</title> 
+    <script src="addTo.js"></script>
 </head>
 <body>
 <?php
+  session_start();
   $link = pg_connect("dbname=StoriesDB user=postgres password=SydGrad2014");
   $num = $_GET['id'];
+  $_SESSION['id'] = $num;
   $res = pg_exec($link, "select * from stories where id = '$num'");
   $numrows = pg_numrows($res);
 
@@ -28,6 +22,6 @@
   pg_close($link);
 
 ?>
-<button onclick='addStory();' id='addToStory'>Add to Story</button>
+<button id='addToStory'>Add To Story</button>
 </body>
 </html>
