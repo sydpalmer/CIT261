@@ -1,4 +1,4 @@
-document.getElementById("addToStory").addEventListener('click', addStory);
+document.getElementById("myBtn").addEventListener("click", addStory);
 function addStory(){
     var dest = "addTo.php";
     var x = (screen.width/2) - (250/2);
