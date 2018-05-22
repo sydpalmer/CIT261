@@ -1,4 +1,6 @@
-document.getElementById("myBtn").addEventListener("click", addStory);
+window.onload=function(){
+    document.getElementById("addToStory").addEventListener("click", addStory);
+}
 function addStory(){
     var dest = "addTo.php";
     var x = (screen.width/2) - (250/2);
