@@ -9,6 +9,9 @@
       padding: 10px;
       font-size: 110%;
     }
+    td:hover{
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
