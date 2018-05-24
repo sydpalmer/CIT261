@@ -15,6 +15,7 @@
     <div style="width:95%; height:60vh;">
         <textarea style="width:100%; height:100%" id="storyInput" name="storyInput"></textarea>
     </div>
+    <br><br>
     <div>
         <input type="submit" value="ADD" name="submit"/>
     </div>
@@ -23,7 +24,7 @@
             session_start();
             $link = pg_connect("dbname=StoriesDB user=postgres password=SydGrad2014");
             $num = $_SESSION['id'];
-            $res = pg_exec($link, "select story from stories where id = '$num'");
+            $res = pg_exec($link, "select * from stories where id = '$num'");
 
             $numrows = pg_num_rows($res);
             for($ri = 0; $ri < $numrows; $ri++){
