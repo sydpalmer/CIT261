@@ -23,7 +23,21 @@
             session_start();
             $link = pg_connect("dbname=StoriesDB user=postgres password=SydGrad2014");
             $num = $_SESSION['id'];
-            $story = " " . $_GET['storyInput'];
+            $res = pg_exec($link, "select story from stories where id = '$num'");
+
+            $numrows = pg_num_rows($res);
+            for($ri = 0; $ri < $numrows; $ri++){
+                $row = pg_fetch_array($res, $ri);
+                $oldStory = $row['story'];
+            }
+            $story = $oldStory . " " . $_GET['storyInput'];
+
+            $query = "UPDATE stories SET story=$story WHERE id=$num;";
+            $result = pg_query($link, $query);
+
+            if(!$result){
+                echo "Query did not execute";
+            }
         }
     ?>
 </body>
