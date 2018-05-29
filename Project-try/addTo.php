@@ -33,8 +33,8 @@
             }
             $story = $oldStory . " " . $_GET['storyInput'];
 
-            $query = "UPDATE stories SET story=$story WHERE id=$num;";
-            $result = pg_query($link, $query);
+            $query = "UPDATE stories SET story='$story' WHERE id='$num'";
+            $result = pg_exec($link, $query);
 
             if(!$result){
                 echo "Query did not execute";
