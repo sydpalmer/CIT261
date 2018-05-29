@@ -4,7 +4,14 @@
     <title>Storyteller</title>
     <meta charset = "utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--<script src="display-Stories.js"></script>-->
+    <script>
+        function createStory(){
+            var dest = "createStory.php";
+            var x = (screen.width/2) - (300/2);
+            var y = (screen.height/2) - (400/2);
+            window.open(dest, "_blank", "scrollbars=yes,width=300,height=400,left=" + x + ",top=" + y);
+    }
+    </script>
     <style>
         img{
             max-width: 100%;
@@ -50,7 +57,7 @@
         <iframe src="display-Stories.php" frameborder="0" id="iframe" width="100%"></iframe>
     </div>
     <div style="text-align: center">
-        <button id="createStory">+ Create</button>
+        <button id="createStory" onclick="createStory();">+ Create</button>
     </div>
 
 </body>
