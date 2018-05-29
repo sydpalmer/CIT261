@@ -42,6 +42,9 @@
             if(!$result){
                 echo "<script>console.log('Query did not execute');</script>";
             }
+            else{
+                echo "<script>window.close();</script>";
+            }
         }
         else{
             echo "<script>console.log('button was NOT pushed');</script>";

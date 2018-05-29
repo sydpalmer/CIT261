@@ -24,6 +24,8 @@
   pg_close($link);
 
 ?>
-<button id="addToStory">Add to Story</button>
+<form>
+<button id="addToStory" name="addToStoryButton">Add to Story</button>
+</form>
 </body>
 </html>
