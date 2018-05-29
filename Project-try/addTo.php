@@ -40,7 +40,7 @@
             $result = pg_exec($link, $query);
 
             if(!$result){
-                echo "Query did not execute";
+                echo "<script>console.log('Query did not execute');</script>";
             }
         }
         else{
