@@ -11,6 +11,7 @@
 <body>
     <form>
     <h3>Title: <input type="text" name="title"></h3>
+    <h3>Created by: <input type="text" name="author"></h3>
     <div style="width:95%; height:60vh;">
         <textarea style="width:100%; height:100%" id="storyInput" name="storyInput"></textarea>
     </div>
