@@ -43,6 +43,7 @@
                 echo "<script>console.log('Query did not execute');</script>";
             }
             else{
+                echo "<script>window.opener.close();</script>";
                 echo "<script>window.close();</script>";
             }
         }
