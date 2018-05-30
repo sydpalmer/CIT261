@@ -37,6 +37,7 @@
                 echo "<script>console.log('Query did not execute');</script>";
             }
             else{
+                echo "<script>window.opener.location.reload();</script>";
                 echo "<script>window.close();</script>";
             }
         }
