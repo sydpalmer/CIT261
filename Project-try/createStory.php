@@ -22,21 +22,16 @@
     </form>
     <?php
         if(isset($_GET['submit'])){
-            // echo "<script>console.log('button was pushed');</script>";
-            // session_start();
-            // $link = pg_connect("dbname=StoriesDB user=postgres password=SydGrad2014");
-            // $num = $_SESSION['id'];
-            // $res = pg_exec($link, "select * from stories where id = '$num'");
-
-            // $numrows = pg_num_rows($res);
-            // for($ri = 0; $ri < $numrows; $ri++){
-            //     $row = pg_fetch_array($res, $ri);
-            //     $oldStory = $row['story'];
-            // }
-            // $story = $oldStory . " " . $_GET['storyInput'];
-
-            // $query = "UPDATE stories SET story='$story' WHERE id='$num'";
-            // $result = pg_exec($link, $query);
+            echo "<script>console.log('button was pushed');</script>";
+            session_start();
+            $link = pg_connect("dbname=StoriesDB user=postgres password=SydGrad2014");
+            
+            $title = $_GET['title'];
+            $author = $_GET['author'];
+            $story = $_GET['storyInput'];
+            
+            $query = "INSERT INTO stories (title, author, story) VALUES ('$title', '$author', '$story')";
+            $result = pg_exec($link, $query);
 
             // if(!$result){
             //     echo "<script>console.log('Query did not execute');</script>";
