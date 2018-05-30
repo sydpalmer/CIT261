@@ -33,13 +33,12 @@
             $query = "INSERT INTO stories (title, author, story) VALUES ('$title', '$author', '$story')";
             $result = pg_exec($link, $query);
 
-            // if(!$result){
-            //     echo "<script>console.log('Query did not execute');</script>";
-            // }
-            // else{
-            //     echo "<script>window.opener.close();</script>";
-            //     echo "<script>window.close();</script>";
-            // }
+            if(!$result){
+                echo "<script>console.log('Query did not execute');</script>";
+            }
+            else{
+                echo "<script>window.close();</script>";
+            }
         }
         else{
             echo "<script>console.log('button was NOT pushed');</script>";
