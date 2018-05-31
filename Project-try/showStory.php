@@ -3,6 +3,17 @@
 <head>
     <title>Story</title> 
     <script src="addTo.js"></script>
+    <style>
+      button{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 4px;
+            background-color: cornflowerblue;
+            padding: 10px 10px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 95%;
+        }
+    </style>
 </head>
 <body style="background-color: cornflowerblue;">
 <?php
@@ -15,8 +26,9 @@
 
   for($ri = 0; $ri < $numrows; $ri++){
     $row = pg_fetch_array($res, $ri);
-    echo "<h1><i>" . $row['title'] . "</i></h1>
-            <h2>By: " . $row['author'] . "</h2>
+  $link = pg_connect("dbname=StoriesDB user=postgres password=SydGrad2014");
+    echo "<h1 style='margin:0'><i>" . $row['title'] . "</i></h1>
+            <h2 style='margin:0'>By: " . $row['author'] . "</h2>
             <p>" . $row['story'] . "</p>";
     $_SESSION['title'] = $row['title'];
     $_SESSION['author'] = $row['author'];
