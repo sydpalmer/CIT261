@@ -16,13 +16,19 @@
             font-size: 95%;
         }
     </style>
+    <script>
+        function checkCount(){
+            document.getElementById('count').innerHTML = "Characters left: "+ (400 - document.getElementById('storyInput').value.length);
+        }
+    </script>    
 </head>
 <body style="background-color: cornflowerblue;">
     <form>
     <h3 style="text-align: center">Title: <input type="text" name="title"></h3>
     <h3 style="text-align: center">Created by: <input type="text" name="author"></h3>
     <div style="width:95%; height:50vh;">
-        <textarea style="width:100%; height:100%" id="storyInput" name="storyInput" placeholder="Type your story here..." maxlength="400"></textarea>
+        <p style="text-align: right; margin:0" id="count">Characters left: </p>
+        <textarea onkeydown="checkCount();" style="width:100%; height:90%" id="storyInput" name="storyInput" placeholder="Type your story here..." maxlength="400"></textarea>
     </div>
     <br>
     <div style="text-align: center">
