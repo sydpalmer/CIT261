@@ -22,7 +22,7 @@
     <h3>Adding to <i><?php session_start(); echo $_SESSION['title'];?></i><br>
         Created By: <?php session_start(); echo $_SESSION['author'];?>
     </h3>
-    <div style="width:95%; height:60vh;">
+    <div style="width:95%; height:50vh;">
         <textarea style="width:100%; height:100%" id="storyInput" name="storyInput" placeholder="Type your part of the story here..."></textarea>
     </div>
     <br>
