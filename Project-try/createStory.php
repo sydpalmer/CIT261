@@ -8,7 +8,7 @@
         }
     </style>
 </head>
-<body>
+<body style="background-color: cornflowerblue;">
     <form>
     <h3 style="text-align: center">Title: <input type="text" name="title"></h3>
     <h3 style="text-align: center">Created by: <input type="text" name="author"></h3>
