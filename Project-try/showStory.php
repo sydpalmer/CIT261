@@ -7,7 +7,7 @@
       button{
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             border-radius: 4px;
-            background-color: cornflowerblue;
+            background-color: white;
             padding: 10px 10px;
             text-align: center;
             cursor: pointer;
@@ -36,6 +36,8 @@
   pg_close($link);
 
 ?>
-<button id="addToStory" name="addToStoryButton">Add to Story</button>
+<div style="text-align: center;">
+  <button id="addToStory" name="addToStoryButton">Add to Story</button>
+</div>
 </body>
 </html>
