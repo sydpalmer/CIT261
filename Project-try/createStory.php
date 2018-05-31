@@ -18,7 +18,7 @@
     </style>
     <script>
         function checkCount(){
-            document.getElementById('count').innerHTML = "Characters left: "+ (400 - document.getElementById('storyInput').value.length);
+            document.getElementById('count').innerHTML = "Characters left: "+ (399 - document.getElementById('storyInput').value.length);
         }
     </script>    
 </head>
