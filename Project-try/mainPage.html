@@ -46,14 +46,23 @@
         #started_stories p:hover{
             cursor: pointer;
         }
+        button{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 4px;
+            background-color: cornflowerblue;
+            padding: 10px 10px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 95%;
+        }
     </style>
 </head>
 <body>
     <header style="background-color: cornflowerblue" class="flex-container">
         <img src="bookIcon.JPG" id="logo">
-        <h1><b>Story Tellers</b></h1>
+        <h1 style="font-size:150%"><b>Story Tellers</b></h1>
     </header><br>
-    <div id="stories" style="width:100%; height:50vh;">
+    <div id="stories" style="width:100%; height:50vh; overflow-y: auto;">
         <iframe src="display-Stories.php" frameborder="0" id="iframe" width="100%" height="100%"></iframe>
     </div><br>
     <div style="text-align: center;">
