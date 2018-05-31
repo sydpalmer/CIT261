@@ -18,7 +18,11 @@
     </style>
     <script>
         function checkCount(){
-            document.getElementById('count').innerHTML = "Characters left: "+ (399 - document.getElementById('storyInput').value.length);
+            if(document.getElementById("storyInput").value == ''){
+                document.getElementById('count').innerHTML = "Characters left: " + 400;
+            }else{
+                document.getElementById('count').innerHTML = "Characters left: "+ (400 - document.getElementById('storyInput').value.length);
+            }
         }
     </script>    
 </head>
@@ -28,7 +32,7 @@
     <h3 style="text-align: center">Created by: <input type="text" name="author"></h3>
     <div style="width:95%; height:50vh;">
         <p style="text-align: right; margin:0" id="count">Characters left: </p>
-        <textarea onkeydown="checkCount();" style="width:100%; height:90%" id="storyInput" name="storyInput" placeholder="Type your story here..." maxlength="400"></textarea>
+        <textarea onkeyup="checkCount();" style="width:100%; height:90%" id="storyInput" name="storyInput" placeholder="Type your story here..." maxlength="400"></textarea>
     </div>
     <br>
     <div style="text-align: center">
