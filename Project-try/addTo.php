@@ -6,6 +6,15 @@
         textarea{
             resize: none;
         }
+        input[type=submit]{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 4px;
+            background-color: white;
+            padding: 10px 10px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 95%;
+        }
     </style>
 </head>
 <body>
@@ -14,10 +23,10 @@
         Created By: <?php session_start(); echo $_SESSION['author'];?>
     </h3>
     <div style="width:95%; height:60vh;">
-        <textarea style="width:100%; height:100%" id="storyInput" name="storyInput"></textarea>
+        <textarea style="width:100%; height:100%" id="storyInput" name="storyInput" placeholder="Type your part of the story here..."></textarea>
     </div>
     <br>
-    <div>
+    <div style="text-align: center">
         <input type="submit" value="ADD" name="submit"/>
     </div>
     </form>
