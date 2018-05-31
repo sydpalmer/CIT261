@@ -22,7 +22,7 @@
     <h3 style="text-align: center">Title: <input type="text" name="title"></h3>
     <h3 style="text-align: center">Created by: <input type="text" name="author"></h3>
     <div style="width:95%; height:50vh;">
-        <textarea style="width:100%; height:100%" id="storyInput" name="storyInput" placeholder="Type your story here..."></textarea>
+        <textarea style="width:100%; height:100%" id="storyInput" name="storyInput" placeholder="Type your story here..." maxlength="200"></textarea>
     </div>
     <br>
     <div style="text-align: center">
