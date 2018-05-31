@@ -31,7 +31,7 @@
     <h3 style="text-align: center">Title: <input type="text" name="title"></h3>
     <h3 style="text-align: center">Created by: <input type="text" name="author"></h3>
     <div style="width:95%; height:50vh;">
-        <p style="text-align: right; margin:0" id="count">Characters left: </p>
+        <p style="text-align: right; margin:0" id="count">Characters left: 400</p>
         <textarea onkeyup="checkCount();" style="width:100%; height:90%" id="storyInput" name="storyInput" placeholder="Type your story here..." maxlength="400"></textarea>
     </div>
     <br>

@@ -16,6 +16,15 @@
             font-size: 95%;
         }
     </style>
+    <script>
+        function checkCount(){
+            if(document.getElementById("storyInput").value == ''){
+                document.getElementById('count').innerHTML = "Characters left: " + 400;
+            }else{
+                document.getElementById('count').innerHTML = "Characters left: "+ (400 - document.getElementById('storyInput').value.length);
+            }
+        }
+    </script>
 </head>
 <body style="background-color: cornflowerblue;">
     <form>
@@ -23,7 +32,8 @@
         Created By: <?php session_start(); echo $_SESSION['author'];?>
     </h3>
     <div style="width:95%; height:50vh;">
-        <textarea style="width:100%; height:100%" id="storyInput" name="storyInput" placeholder="Type your part of the story here..." maxlength="400"></textarea>
+        <p style="text-align: right; margin:0" id="count">Characters left: 400</p>
+        <textarea onkeyup="checkCount();" style="width:100%; height:90%" id="storyInput" name="storyInput" placeholder="Type your part of the story here..." maxlength="400"></textarea>
     </div>
     <br>
     <div style="text-align: center">
