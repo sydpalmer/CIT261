@@ -23,7 +23,7 @@
         Created By: <?php session_start(); echo $_SESSION['author'];?>
     </h3>
     <div style="width:95%; height:50vh;">
-        <textarea style="width:100%; height:100%" id="storyInput" name="storyInput" placeholder="Type your part of the story here..."></textarea>
+        <textarea style="width:100%; height:100%" id="storyInput" name="storyInput" placeholder="Type your part of the story here..." maxlength="400"></textarea>
     </div>
     <br>
     <div style="text-align: center">
