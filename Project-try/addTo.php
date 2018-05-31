@@ -17,7 +17,7 @@
         }
     </style>
 </head>
-<body>
+<body style="background-color: cornflowerblue;">
     <form>
     <h3>Adding to <i><?php session_start(); echo $_SESSION['title'];?></i><br>
         Created By: <?php session_start(); echo $_SESSION['author'];?>
