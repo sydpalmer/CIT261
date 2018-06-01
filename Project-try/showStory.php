@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Story</title> 
+    <link rel="icon" type="image/x-icon" href="bookIcon.JPG" />
     <script src="addTo.js"></script>
     <style>
       button{

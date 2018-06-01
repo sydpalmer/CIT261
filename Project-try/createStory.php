@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Create a New Story</title>
+    <link rel="icon" type="image/x-icon" href="bookIcon.JPG" />
     <style>
         textarea{
             resize: none;
