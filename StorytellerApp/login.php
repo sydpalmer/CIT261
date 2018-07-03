@@ -125,7 +125,7 @@ span.psw {
 
     <div class="container" id="register" style="background-color:#f1f1f1">
         Not a member?&emsp;
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="register">Register Now</button>
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="register">Register</button>
     </div>
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
