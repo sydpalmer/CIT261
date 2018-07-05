@@ -1,6 +1,6 @@
 --database: StoriesDB
 
-CREATE TABLE user(
+CREATE TABLE users(
     user_id SERIAL PRIMARY KEY,
     username TEXT NOT NULL UNIQUE,
     password TEXT NOT NULL
@@ -11,5 +11,5 @@ CREATE TABLE stories(
     title TEXT NOT NULL,
     author TEXT NOT NULL,
     story TEXT NOT NULL,
-    user_id INTEGER REFERENCES user(user_id)
+    user_id INTEGER REFERENCES users(user_id)
 );
